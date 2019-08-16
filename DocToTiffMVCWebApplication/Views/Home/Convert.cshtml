@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Convert";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Basic File Upload</h2>
+@using (Html.BeginForm("Convert", "Home",
+                                                FormMethod.Post,
+                                                new { enctype = "multipart/form-data" }))
+{
+    <label for="file">Upload File:</label>
+    <input type="file" name="files" id="files" /><br><br>
+    <input type="submit" value="Upload File" />
+    <br><br>
+    @ViewBag.Message
+}
